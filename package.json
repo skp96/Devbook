@@ -4,12 +4,19 @@
   "description": "Social network platform for developers",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server"
+    "start": "webpack --watch --mode=development",
+    "server": "nodemon server",
+    "server:debug": "nodemon --inspect server"
   },
   "author": "Sunny Patel",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react": "^6.24.1",
     "bcryptjs": "^2.4.3",
     "config": "^3.2.5",
     "express": "^4.17.1",
@@ -17,7 +24,9 @@
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.9",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
