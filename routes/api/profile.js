@@ -79,11 +79,7 @@ router.post(
 
 			if (profile) {
 				// Update
-				profile = await Profile.findOneAndUpdate(
-					{ user: req.user.id },
-					{ $set: profileFields },
-					{ new: true, upsert: true }
-				);
+				profile = await Profile.findOneAndUpdate({ user: req.user.id }, { $set: profileFields }, { new: true });
 
 				return res.json(profile);
 			}
@@ -99,5 +95,17 @@ router.post(
 		}
 	}
 );
+
+// @route - GET api/profile
+// @desc - Get all profiles
+// @access - Public
+router.get('/', async (req, res) => {
+	try {
+		const profiles = await Profile.find().populate('user', [ 'name', 'avatar' ]);
+		res.json(profiles);
+	} catch (err) {
+		res.status(500).send('Server Error');
+	}
+});
 
 module.exports = router;
