@@ -2,14 +2,13 @@ const path = require('path');
 
 module.exports = {
 	context: __dirname,
-	entry: './server.js', // change entry, remove target to main.js (React hooking into dom)
-	target: 'node',
+	entry: './client/src/index.js',
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	resolve: {
-		extensions: [ '.js', '.jsx', '*' ]
+		extensions: [ '.js', '.jsx', '.css', '*' ]  
 	},
 	module: {
 		rules: [
@@ -22,7 +21,15 @@ module.exports = {
 						presets: [ '@babel/env', '@babel/react' ]
 					}
 				}
-			}
+			}, 
+			{
+				test: /\.css$/i,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+      	loader: 'url-loader?limit=100000',
+			},
 		]
 	},
 	node: {
