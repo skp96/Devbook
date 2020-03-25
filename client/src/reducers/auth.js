@@ -21,7 +21,6 @@ export default function(state = initialState, action) {
   switch(type) {
     case SIGNUP_SUCCESS:
     case LOGIN_SUCCESS:
-      debugger
       return {
         ...state,
         ...payload,
