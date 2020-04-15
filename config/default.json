@@ -2,5 +2,6 @@
 	"mongoURI": "mongodb+srv://sunny192:sunny192@devbook-gjxue.mongodb.net/test?retryWrites=true&w=majority",
 	"jwtToken": "authentication token",
 	"githubClientId": "031801339f9bcf9deafc",
-	"githubSecret": "5c14a1fc1f5868f5980da03f022092d7f15c98b0"
+	"githubSecret": "5c14a1fc1f5868f5980da03f022092d7f15c98b0",
+	"githubtoken": "c7126e2bb396f06699261e800addcf754357f7aa"
 }

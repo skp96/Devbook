@@ -95,9 +95,9 @@ router.delete('/:id', auth, async (req, res) => {
 // @route - PUT api/posts/likes/:id
 // @desc - Like a post
 // @access - Private
-router.put('/likes/:id', auth, async (req, res) => {
+router.put('/like/:id', auth, async (req, res) => {
 	try {
-		const post = await Post.findById(req.params.id);
+		const post = await Post.findById(req.params.id)
 
 		//Check if the post as already been liked by the user
 		if (post.likes.filter((like) => like.user.toString() === req.user.id).length > 0) {

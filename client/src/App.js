@@ -12,6 +12,8 @@ import AddExperience from './components/user-profile/AddExperience';
 import AddEducation from './components/user-profile/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import ProtectedRoute from './components/routing/ProtectedRoute';
 
 import { getUser } from './actions/auth';
@@ -47,9 +49,10 @@ const App = () => {
 							<ProtectedRoute exact path='/dashboard' component={Dashboard} />
 							<ProtectedRoute exact path='/create-profile' component={CreateProfile} />
 							<ProtectedRoute exact path='/edit-profile' component={EditProfile} />
-							<ProtectedRoute exact path='/edit-profile' component={EditProfile} />
 							<ProtectedRoute exact path='/add-experience' component={AddExperience} />
 							<ProtectedRoute exact path='/add-education' component={AddEducation} />
+							<ProtectedRoute exact path='/posts' component={Posts} />
+							<ProtectedRoute exact path='/posts/:id' component={Post} />
 						</Switch>
 					</section>
 				</Fragment>
