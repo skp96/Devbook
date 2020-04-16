@@ -287,19 +287,20 @@ router.get('/user/:user_id', async (req, res) => {
 // @access - Public
 
 router.get('/github/:username', async (req, res) => {
-	try{
-		const uri = encodeURI( `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`);
+	try {
+		const uri = encodeURI(`https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`);
 
 		const headers = {
 			'user-agent': 'node.js',
 			Authorization: `token ${config.get('githubtoken')}`
 		};
 
-		const gitHubResponse = await axios.get(uri, {headers});
-		return res.json(gitHubResponse.data)
-	}catch(err){
+		const gitHubResponse = await axios.get(uri, { headers });
+		console.log(gitHubResponse);
+		return res.json(gitHubResponse.data);
+	} catch (err) {
 		console.error(err.message);
-		return res.status(404).json('No Github profile found')
+		return res.status(404).json('No Github profile found');
 	}
 });
 
