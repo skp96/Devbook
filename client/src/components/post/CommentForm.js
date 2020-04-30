@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addComment } from '../../actions/post';
+import { createNotification } from '../../actions/notification';
 
-const CommentForm = ({ postId, addComment }) => {
+const CommentForm = ({ auth, post: { _id, user }, addComment, createNotification }) => {
 	const [ text, setText ] = useState('');
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
-		addComment(postId, { text });
+
+		const notificationData = {
+			notifyUserId: user,
+			message: `${auth.user.name} commented on your post`,
+			postId: _id
+		};
+		await addComment(_id, { text });
+		await createNotification(notificationData);
 		setText('');
 	};
 
@@ -34,7 +42,8 @@ const CommentForm = ({ postId, addComment }) => {
 };
 
 CommentForm.propTypes = {
-	addComment: PropTypes.func.isRequired
+	addComment: PropTypes.func.isRequired,
+	createNotification: PropTypes.func.isRequired
 };
 
-export default connect(null, { addComment })(CommentForm);
+export default connect(null, { addComment, createNotification })(CommentForm);

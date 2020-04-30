@@ -6,7 +6,8 @@ import {
 	ADD_POST,
 	GET_POST,
 	ADD_COMMENT,
-	REMOVE_COMMENT
+	REMOVE_COMMENT,
+	CLEAR_POSTS
 } from '../actions/types';
 
 const initialState = {
@@ -72,6 +73,13 @@ export default function(state = initialState, action) {
 				...state,
 				post: { ...state.post, comments: filteredComments },
 				loading: false
+			};
+		case CLEAR_POSTS:
+			return {
+				posts: [],
+				post: null,
+				loading: false,
+				error: {}
 			};
 		default:
 			return state;

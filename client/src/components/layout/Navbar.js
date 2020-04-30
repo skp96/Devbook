@@ -1,12 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import Notification from './Notification';
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated, loading }, logout, notification: { notifications } }) => {
+	const [ showNotifications, setNotifications ] = useState(false);
+	const container = React.createRef();
+
+	useEffect(() => {
+		document.addEventListener('click', hideNotification);
+
+		return () => {
+			document.removeEventListener('click', hideNotification);
+		};
+	});
+
+	const hideNotification = (e) => {
+		if (container.current && !container.current.contains(e.target)) {
+			setNotifications(false);
+		}
+	};
+
 	const authLinks = (
-		<ul>
+		<ul className='links'>
 			<li>
 				<Link to='/profiles'>Developers</Link>
 			</li>
@@ -20,6 +38,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 					<span className='hide-sm'>Dashboard</span>
 				</Link>
 			</li>
+			<li onClick={() => setNotifications(!showNotifications)} className='notifications'>
+				<i className='className fas fa-exclamation' />
+				{''}
+				<span className='hide-sm'>Notifications</span>
+				<Notification notifications={notifications} showNotifications={showNotifications} />
+			</li>
 			<li>
 				<a onClick={logout} href='#!'>
 					<i className='fas fa-sign-out-alt' />
@@ -31,7 +55,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 	);
 
 	const guestLinks = (
-		<ul>
+		<ul className='links'>
 			<li>
 				<Link to='/profiles'>Developers</Link>
 			</li>
@@ -45,24 +69,28 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 	);
 
 	return (
-		<nav className='navbar bg-dark'>
-			<h1>
-				<Link to='/'>
-					<i className='fas fa-code' /> Devbook
-				</Link>
-			</h1>
-			{!loading && <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
-		</nav>
+		<Fragment>
+			<nav className='navbar bg-dark' ref={container}>
+				<h1>
+					<Link to='/'>
+						<i className='fas fa-code' /> Devbook
+					</Link>
+				</h1>
+				{!loading && <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
+			</nav>
+		</Fragment>
 	);
 };
 
 Navbar.propTypes = {
 	logout: PropTypes.func.isRequired,
-	auth: PropTypes.object.isRequired
+	auth: PropTypes.object.isRequired,
+	notification: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
-	auth: state.auth
+	auth: state.auth,
+	notification: state.notification
 });
 
 export default connect(mapStateToProps, { logout })(Navbar);

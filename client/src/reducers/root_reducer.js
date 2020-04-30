@@ -1,12 +1,14 @@
-import {combineReducers} from 'redux';
-import alert from './alert'
+import { combineReducers } from 'redux';
+import alert from './alert';
 import auth from './auth';
 import profile from './profile';
 import post from './post';
+import notification from './notification';
 
 export default combineReducers({
-  alert,
-  auth,
-  profile,
-  post
-})
+	alert,
+	auth,
+	profile,
+	post,
+	notification
+});

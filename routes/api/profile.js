@@ -25,7 +25,7 @@ router.get('/me', auth, async (req, res) => {
 	}
 });
 
-// @route - POST api/profile/me
+// @route - POST api/profile
 // @desc - Create or update user profile
 // @access - Private
 router.post(
@@ -296,7 +296,6 @@ router.get('/github/:username', async (req, res) => {
 		};
 
 		const gitHubResponse = await axios.get(uri, { headers });
-		console.log(gitHubResponse);
 		return res.json(gitHubResponse.data);
 	} catch (err) {
 		console.error(err.message);
