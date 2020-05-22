@@ -8,7 +8,10 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	resolve: {
-		extensions: [ '.js', '.jsx', '.css', '*' ]  
+		extensions: [ '.js', '.jsx', '.css', '*' ],
+		modulesDirectories: [
+          'node_modules'
+      ]     
 	},
 	module: {
 		rules: [
