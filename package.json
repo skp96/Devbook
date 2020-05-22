@@ -6,7 +6,7 @@
   "proxy": "http://localhost:5000",
   "scripts": {
     "webpack": "webpack --watch --mode=development",
-    "start": "node server",
+    "start": "node server.js",
     "server": "nodemon server",
     "server:debug": "nodemon --inspect server",
     "client": "npm start --prefix client",
