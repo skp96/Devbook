@@ -51,7 +51,7 @@ router.post('/', auth, async (req, res) => {
 // @access- Private
 router.put('/:id', auth, async (req, res) => {
 	try {
-		const notification = await Notification.findOneAndUpdate({ _id: req.params.id }, { read: true });
+		const notification = await Notification.findOneAndUpdate({ _id: req.params.id }, { read: true }, { new: true });
 
 		res.json(notification);
 	} catch (err) {

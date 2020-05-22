@@ -1,5 +1,5 @@
 {
-	"mongoURI": "mongodb+srv://sunny192:sunny192@devbook-gjxue.mongodb.net/test?retryWrites=true&w=majority",
+	"mongoURI": "mongodb://sunny192:sunny192@devbook-shard-00-00-gjxue.mongodb.net:27017,devbook-shard-00-01-gjxue.mongodb.net:27017,devbook-shard-00-02-gjxue.mongodb.net:27017/test?ssl=true&replicaSet=Devbook-shard-0&authSource=admin&retryWrites=true&w=majority",
 	"jwtToken": "authentication token",
 	"githubClientId": "031801339f9bcf9deafc",
 	"githubSecret": "5c14a1fc1f5868f5980da03f022092d7f15c98b0",

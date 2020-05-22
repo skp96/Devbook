@@ -32,7 +32,7 @@ const Signup = ({setAlert, signup, isAuthenticated}) => {
   return (
     <Fragment>
       <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
+      <p className="lead"><i className="fas fa-user-astronaut" /> Create Your Account</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input type="text" placeholder="Name" name="name" value={name} onChange={e => onChange(e)}/>

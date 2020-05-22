@@ -15,7 +15,8 @@ const ProfileAbout = ({ profile: { bio, skills, user: { name } } }) => {
 			<div className='skills'>
 				{skills.map((skill, idx) => (
 					<div key={idx} className='p-1'>
-						<i className='fas fa-check' />
+						<i className="fas fa-atom" />
+						{' '}
 						{skill}
 					</div>
 				))}

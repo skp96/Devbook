@@ -6,13 +6,13 @@ const DashboardActions = () => {
 		<Fragment>
 			<div className='dash-buttons'>
 				<Link to='edit-profile' className='btn btn-light'>
-					<i className='fas fa-user-circle text-primary' /> Edit Profile
+					<i class="fas fa-id-badge text-primary" /> Edit Profile
 				</Link>
 				<Link to='add-experience' className='btn btn-light'>
-					<i className='fab fa-black-tie text-primary' /> Add Experience
+					<i class="fas fa-briefcase text-primary" /> Add Experience
 				</Link>
 				<Link to='add-education' className='btn btn-light'>
-					<i className='fas fa-graduation-cap text-primary' /> Add Education
+					<i class="fas fa-user-graduate text-primary" /> Add Education
 				</Link>
 			</div>
 		</Fragment>

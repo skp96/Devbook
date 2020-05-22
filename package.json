@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Social network platform for developers",
   "main": "server.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "webpack --watch --mode=development",
     "server": "nodemon server",

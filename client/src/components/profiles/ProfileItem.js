@@ -17,9 +17,11 @@ const ProfileItem = ({ profile: { user: { _id, name, avatar }, status, company, 
 				</h2>
 			</div>
 			<ul>
+				<li>Skills</li>
 				{skills.slice(0, 4).map((skill, idx) => (
 					<li key={idx} className='text-primary'>
-						<i className='fas fa-check' />
+						<i className="fas fa-atom" />
+						{' '}
 						{skill}
 					</li>
 				))}

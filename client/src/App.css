@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
-	--primary-color: #17a2b8;
-	--dark-color: #343a40;
+	--primary-color: #30A730;
+	--dark-color: #192019;
 	--light-color: #f4f4f4;
 	--danger-color: #dc3545;
 	--success-color: #28a745;
@@ -137,6 +137,7 @@ img {
 	margin-right: 0.5rem;
 	transition: opacity 0.2s ease-in;
 	outline: none;
+	border-radius: 0.5rem;
 }
 
 .badge {
@@ -236,6 +237,7 @@ img {
 /* Forms */
 .form .form-group {
 	margin: 1.2rem 0;
+	
 }
 
 .form .form-text {
@@ -255,6 +257,9 @@ img {
 	padding: 0.4rem;
 	font-size: 1.2rem;
 	border: 1px solid #ccc;
+	resize: none;
+	outline: none;
+	border-radius: 0.5rem;
 }
 
 .form input[type='submit'],
@@ -328,6 +333,11 @@ button {
 	margin-right: 0.6rem;
 }
 
+.notifications:hover {
+	cursor: pointer;
+	color: var(--primary-color);
+}
+
 .notification-content {
 	display: flex;
 	flex-direction: column;
@@ -344,14 +354,22 @@ button {
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
-	display: block;
 	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	border-bottom: 1px lightgray solid;
+}
+
+.fa-circle {
+	color: red;
+	padding-right: 10px;
 }
 
 /* Landing Page */
 .landing {
 	position: relative;
-	background: url('./img/showcase.jpg') no-repeat center center/cover;
+	background: url('./img/development_team.jpg') no-repeat center center/cover;
 	height: 100vh;
 }
 
@@ -376,6 +394,7 @@ button {
 	padding: 1rem;
 	line-height: 1.8;
 	margin-bottom: 1rem;
+	border-radius: 0.5rem;
 }
 
 /* Profile Page */
@@ -392,6 +411,7 @@ button {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	border-radius: 0.5rem;
 }
 
 .profile-top img {
@@ -410,6 +430,7 @@ button {
 .profile-about {
 	grid-area: about;
 	text-align: center;
+	border-radius: 0.5rem;
 }
 
 .profile-about .skills {
@@ -417,14 +438,17 @@ button {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	border-radius: 0.5rem;
 }
 
 .profile-exp {
 	grid-area: exp;
+	border-radius: 0.5rem;
 }
 
 .profile-edu {
 	grid-area: edu;
+	border-radius: 0.5rem;
 }
 
 .profile-exp h2,
@@ -451,10 +475,12 @@ button {
 
 .profile-github {
 	grid-area: github;
+	
 }
 
 .profile-github .repo {
 	display: flex;
+	border-radius: 0.5rem;
 }
 
 .profile-github .repo > div:first-child {
@@ -478,6 +504,7 @@ button {
 	grid-template-columns: 1fr 4fr;
 	grid-gap: 2rem;
 	align-items: center;
+	border-radius: 0.5rem;
 }
 
 .post > div:first-child {
