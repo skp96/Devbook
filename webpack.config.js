@@ -9,9 +9,7 @@ module.exports = {
 	},
 	resolve: {
 		extensions: [ '.js', '.jsx', '.css', '*' ],
-		modulesDirectories: [
-          'node_modules'
-      ]     
+		modules:['node_modules']
 	},
 	module: {
 		rules: [
@@ -27,7 +25,10 @@ module.exports = {
 			}, 
 			{
 				test: /\.css$/i,
-				use: ['style-loader', 'css-loader'],
+				use: [
+        {loader: "style-loader"},
+        {loader: "css-loader"}
+    		],
 			},
 			{
 				test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
