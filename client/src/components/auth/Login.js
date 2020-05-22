@@ -24,6 +24,9 @@ const Login = ({ login, isAuthenticated }) => {
 		return <Redirect to='/dashboard' />;
 	}
 
+	const demoEmail = 'sunnykpatel1992@gmail.com'
+  const demoPassword = '1234567'
+
 	return (
 		<Fragment>
 			<h1 className='large text-primary'>Sign In</h1>
@@ -53,6 +56,7 @@ const Login = ({ login, isAuthenticated }) => {
 				</div>
 				<input type='submit' className='btn btn-primary' value='Login' />
 			</form>
+			<button className='btn btn-primary my-1' onClick={() => login(demoEmail, demoPassword)}>Demo Login</button>
 			<p className='my-1'>
 				Don't have an account? <Link to='/signup'>Sign Up</Link>
 			</p>
