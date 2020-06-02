@@ -32,6 +32,27 @@ const Navbar = ({
 	const authLinks = (
 		<ul className='links'>
 			<li>
+				<a href='https://skp96.github.io/SunnyKPatel/' target='_blank' rel='noopener noreferrer'>
+					<i className='fas fa-globe' />
+					 {' '}
+					 Portfolio
+				</a>
+			</li>
+			<li>
+				<a href='https://github.com/skp96' target='_blank' rel='noopener noreferrer'>
+					<i className="fab fa-github" />
+					{' '}
+					Github
+				</a>
+			</li>
+			<li>
+				<a href='https://www.linkedin.com/in/sunny-patel-b0729858/' target='_blank' rel='noopener noreferrer'>
+					<i class="fab fa-linkedin-in" />
+					{' '}
+					Linkedin
+				</a>
+			</li>
+			<li>
 				<Link to='/profiles'>
 					<i class="fas fa-laptop-code" />
 					{' '}
@@ -74,6 +95,21 @@ const Navbar = ({
 
 	const guestLinks = (
 		<ul className='links'>
+			<li>
+				<a href='https://skp96.github.io/SunnyKPatel/' target='_blank' rel='noopener noreferrer'>
+					Portfolio
+				</a>
+			</li>
+			<li>
+				<a href='https://github.com/skp96' target='_blank' rel='noopener noreferrer'>
+					Github
+				</a>
+			</li>
+			<li>
+				<a href='https://www.linkedin.com/in/sunny-patel-b0729858/' target='_blank' rel='noopener noreferrer'>
+					Linkedin
+				</a>
+			</li>
 			<li>
 				<Link to='/profiles'>Developers</Link>
 			</li>
