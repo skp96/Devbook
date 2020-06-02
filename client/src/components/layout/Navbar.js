@@ -88,10 +88,10 @@ const Navbar = ({
 
 	return (
 		<Fragment>
-			<nav className='navbar bg-dark' ref={container}>
+			<nav className='navbar bg-light' ref={container}>
 				<h1>
 					<Link to='/'>
-						<i class="fas fa-terminal" /> Devbook
+						<i className="fas fa-laptop-code" />Devbook
 					</Link>
 				</h1>
 				{!loading && <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>}
