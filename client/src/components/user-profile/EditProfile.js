@@ -68,7 +68,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 		<Fragment>
 			<h1 className='large text-primary'>Edit Your Profile</h1>
 			<p className='lead'>
-				<i className='fas fa-user' /> Add some changes to your profile
+				<i className='fas fa-user' /> Making some changes?
 			</p>
 			<small>* = required field</small>
 			<form className='form' onSubmit={(e) => onSubmit(e)}>
@@ -84,7 +84,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 						<option value='Intern'>Intern</option>
 						<option value='Other'>Other</option>
 					</select>
-					<small className='form-text'>Give us an idea of where you are at in your career</small>
+					<small className='form-text'>What's your role?</small>
 				</div>
 				<div className='form-group'>
 					<input
@@ -94,7 +94,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 						value={company}
 						onChange={(e) => onChange(e)}
 					/>
-					<small className='form-text'>Could be your own company or one you work for</small>
+					<small className='form-text'>Where do you work?</small>
 				</div>
 				<div className='form-group'>
 					<input
@@ -104,7 +104,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 						value={website}
 						onChange={(e) => onChange(e)}
 					/>
-					<small className='form-text'>Could be your own or a company website</small>
+					<small className='form-text'>Company Website</small>
 				</div>
 				<div className='form-group'>
 					<input
@@ -114,7 +114,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 						value={location}
 						onChange={(e) => onChange(e)}
 					/>
-					<small className='form-text'>City & state suggested (eg. Boston, MA)</small>
+					<small className='form-text'>City & state (eg. Boston, MA)</small>
 				</div>
 				<div className='form-group'>
 					<input
@@ -135,7 +135,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 						onChange={(e) => onChange(e)}
 					/>
 					<small className='form-text'>
-						If you want your latest repos and a Github link, include your username
+						If you have one, please include your Github username for your latest repos
 					</small>
 				</div>
 				<div className='form-group'>
